@@ -1,11 +1,22 @@
 
 // let - declaration and assingment 
 //  type infered
-let variable_int = 4
-let variable_string = "hello"
-let variable_float = 12.3
+let identifer_int = 4
+let identifer_string = "hello"
+let identifer_float = 12.3
 // type specified
-let variable:int = 22
+let identifer:int = 22
+
+// variable -> mutable
+let mutable real_variable:int = 10
+printfn "before: %d" real_variable
+real_variable <- 15
+printfn "after: %d" real_variable
+
+
+// non standard identifer name
+let ``let this be a crazy identifer name`` = @"literal string"
+printfn "%s " ``let this be a crazy identifer name``
 
 // functions as first class objects
 let add  x y = x+y
@@ -17,4 +28,39 @@ let isEven x =
     else
         false
 printfn "Is 6 even? %b" (isEven 6)
+
+// Scope
+let a = 10
+let printer a = 
+    printfn "printer a: %d" a //redefinition of the identifier inside the scoe
+printer 20
+
+let b = 111
+let printer2 =
+    printfn "printer2 before redefinition: %d" b // identifier from outer scope
+    let b = 112 // redefinition of the identifier
+    printfn "printer2 after redefinition: %d" b 
+    // scope ends => b returns back to old definition
+printer2
+printfn "b after printer2: %d" b
+
+let logger prefix = 
+    let prefixFormatted = Printf.sprintf "[%s]: " prefix
+    let logFunction  msg = Printf.sprintf "%s%s" prefixFormatted msg
+    logFunction
+let formatter = logger "SyntaxLearning"
+printfn "%s" (formatter("Sample Message"))
+
+// Recursion
+
+let rec fib x =
+    if x = 1 then
+        1
+    else if x = 2 then
+        1
+    else
+        fib(x-1) + fib(x-2)
+printfn "Fibonacci x=6: %d" (fib 6)
+
+
 
