@@ -62,5 +62,21 @@ let rec fib x =
         fib(x-1) + fib(x-2)
 printfn "Fibonacci x=6: %d" (fib 6)
 
+// Operators
+// Operators are functions when surrounded by ()
+let addFunction = (+)
+printfn "1+2 = %d" (addFunction 1 2)
 
+// Operators overloading
+let (+) a b = a-b
+printfn "1+2 = %d" (1 + 2) // Fun -> result - 1
 
+//Piping operator definition let (|>) x y = y x
+
+let pipingResult = 
+     add 1 2
+     |> add 3
+     |> add 4
+printfn "pipingResult = %d" pipingResult // should be 1+2+3+4 = 10
+
+// usefull for passing results around i.e. filter |> map |> reduce
