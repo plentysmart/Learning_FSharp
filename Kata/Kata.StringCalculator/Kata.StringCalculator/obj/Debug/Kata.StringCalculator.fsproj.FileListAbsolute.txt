@@ -1,0 +1,10 @@
+C:\Users\Bartek\Documents\GitHub\Learning_FSharp\Kata\Kata.StringCalculator\Kata.StringCalculator\bin\Debug\Kata.StringCalculator.XML
+C:\Users\Bartek\Documents\GitHub\Learning_FSharp\Kata\Kata.StringCalculator\Kata.StringCalculator\bin\Debug\Kata.StringCalculator.dll
+C:\Users\Bartek\Documents\GitHub\Learning_FSharp\Kata\Kata.StringCalculator\Kata.StringCalculator\bin\Debug\Kata.StringCalculator.pdb
+C:\Users\Bartek\Documents\GitHub\Learning_FSharp\Kata\Kata.StringCalculator\Kata.StringCalculator\bin\Debug\FSharp.Core.dll
+C:\Users\Bartek\Documents\GitHub\Learning_FSharp\Kata\Kata.StringCalculator\Kata.StringCalculator\bin\Debug\FSharp.Core.xml
+C:\Users\Bartek\Documents\GitHub\Learning_FSharp\Kata\Kata.StringCalculator\Kata.StringCalculator\obj\Debug\Kata.StringCalculator.dll
+C:\Users\Bartek\Documents\GitHub\Learning_FSharp\Kata\Kata.StringCalculator\Kata.StringCalculator\obj\Debug\Kata.StringCalculator.pdb
+C:\Users\Bartek\Documents\GitHub\Learning_FSharp\Kata\Kata.StringCalculator\Kata.StringCalculator\bin\Debug\Kata.StringCalculator.dll.config
+C:\Users\Bartek\Documents\GitHub\Learning_FSharp\Kata\Kata.StringCalculator\Kata.StringCalculator\bin\Debug\nunit.framework.dll
+C:\Users\Bartek\Documents\GitHub\Learning_FSharp\Kata\Kata.StringCalculator\Kata.StringCalculator\bin\Debug\nunit.framework.xml
