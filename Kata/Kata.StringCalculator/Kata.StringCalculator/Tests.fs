@@ -28,14 +28,19 @@ type Add() =
     [<Test>]
     member x.``//[delimiter]\n at the beggining of the expression should set new delimiter``() =
         verifyCalculator "//;\n1;2" 3
+    [<TestCase("-3",ExpectedException=typeof<ArgumentException> ,ExpectedMessage="negatives not allowed\n-3" )>]
+    member x.``called with negative number should throw exception "negatives not allowed"`` expression =
+        calculator.Add expression |> ignore
+        
     [<Test>]
-    member x.``called with negative number should throw exception "negatives not allowed"``() =
-        let exceptionThrown =
-            try
-                let result = calculator.Add "-3"
-                false
-            with
-                | :? ArgumentException as x -> 
-                    Assert.AreEqual("negatives not allowed\n-3",x.Message)
-                    true
-        Assert.IsTrue(exceptionThrown)
+    member x.``should ignore numbers above 1000``() =
+        verifyCalculator "1,2,3,1002,1200,123131,1" 7
+    [<Test>]
+    member x.``should handle delimiters longer than one character``() =
+        verifyCalculator "//[***]\n1***2***3" 6
+    [<Test>]
+    member x.``should handle more than one delimiter``() =
+        verifyCalculator "//[*][%]\n1*2%3" 6
+    [<Test>]
+    member x.``should handle more than one delimiter with length longer than one char``() =
+        verifyCalculator "//[***][%$]\n1%$2***3***14" 20
