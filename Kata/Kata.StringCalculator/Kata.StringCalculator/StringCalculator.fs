@@ -4,14 +4,17 @@ open System
 type StringCalculator() = 
     let parseDelimiters (delimitersCommand:string)= 
         delimitersCommand.Split([|'[';']'|], StringSplitOptions.RemoveEmptyEntries)
+
     let split (delimiters:string[]) (expression:string) =
         expression.Split(delimiters, StringSplitOptions.RemoveEmptyEntries)
+
     let onlyNonNegative list =
         match List.partition (fun x -> x>=0) list with
         |_,[] -> list
         |_,x -> 
             let negativeNumbers = String.Join("\n",x)
             raise (ArgumentException("negatives not allowed\n"+negativeNumbers))
+
     member x.Add(calculatorExpression:string):int =
         let delimiters, expression = 
             if calculatorExpression.StartsWith("//") then
@@ -22,7 +25,6 @@ type StringCalculator() =
                 customDelimiters, remainingExpression
             else 
                 [|",";"\n"|], calculatorExpression
-    
         let splitNumbers = 
             expression
                 |> split delimiters
